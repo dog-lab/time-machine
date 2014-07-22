@@ -1,0 +1,19 @@
+table.calendar
+    - var index = 0
+    tr
+        each day in json.days
+            if day["prev-month"]
+                td.prev-month
+                    span.day= day["day-number"]
+                    if index < 7
+                        span.day-of-week= day["day-short-name"]
+            else if day["next-month"]
+                td.next-month
+                    span.day= day["day-number"]
+            else
+                td.month
+                    span.day= day["day-number"]
+                    if index < 7
+                        span.day-of-week= day["day-short-name"]
+
+            - index += 1

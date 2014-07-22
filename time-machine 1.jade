@@ -1,0 +1,6 @@
+table.calendar
+    tr
+        each day in days
+            unless day.prev-month === true
+                td.prev-month
+                    span.day= day.date.
